@@ -15,7 +15,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
+
+    - name: Checkout Saroo savetool
+      uses: actions/checkout@v4
+      with:
+        repository: bucanero/SAROO
+        path: saroo
+
     - name: Install Ubuntu requirements
       if: matrix.os == 'ubuntu-latest'
       run: |
@@ -33,13 +39,16 @@ jobs:
     - name: Runs all the stages in the shell
       run: |
         make
+        cd saroo/tools/savetool/
+        make
+        mv sst ../../../
 
     - name: Get short SHA
       run: echo "sha_name=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
 
     - name: Compress output
       run: |
-        tar -zcvf build.tar.gz ss-converter sgm-unpacker
+        tar -zcvf build.tar.gz ss-converter sgm-unpacker sst
 
     - uses: actions/upload-artifact@v3
       with:
