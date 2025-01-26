@@ -1,5 +1,10 @@
 # Saturn Save Tools
 
+[![License](https://img.shields.io/github/license/bucanero/saturn-save-tools.svg?maxAge=2592000)](https://github.com/bucanero/saturn-save-tools/blob/main/LICENSE)
+[![macOS Linux binaries](https://github.com/bucanero/saturn-save-tools/actions/workflows/build.yml/badge.svg)](https://github.com/bucanero/saturn-save-tools/actions/workflows/build.yml)
+[![Windows binaries](https://github.com/bucanero/saturn-save-tools/actions/workflows/build-win.yml/badge.svg)](https://github.com/bucanero/saturn-save-tools/actions/workflows/build-win.yml)
+[![Twitter](https://img.shields.io/twitter/follow/dparrino?label=Follow)](https://twitter.com/dparrino)
+
 A set of command-line tools for managing SEGA Saturn single save files directly from the PC. (Windows/Linux/macOS)
 - `ss-converter`
 - `sgm-unpacker`
