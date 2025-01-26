@@ -50,7 +50,7 @@ jobs:
       run: |
         tar -zcvf build.tar.gz ss-converter sgm-unpacker sst
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: build-${{ env.sha_name }}-${{matrix.os}}
         path: build.tar.gz
