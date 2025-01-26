@@ -57,7 +57,7 @@ jobs:
         run: |
           tar -zcvf build.tar.gz ss-converter.exe sgm-unpacker.exe sst.exe
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: build-${{ env.sha_name }}-${{matrix.mingw}}
           path: build.tar.gz
