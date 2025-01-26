@@ -26,6 +26,13 @@ jobs:
     name: MSYS2 ${{ matrix.mingw }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Checkout Saroo savetool
+        uses: actions/checkout@v4
+        with:
+          repository: bucanero/SAROO
+          path: saroo
+
       - name: Set up shell
         run: echo "C:\msys64\usr\bin\" >> $GITHUB_PATH
         shell: pwsh
@@ -39,13 +46,16 @@ jobs:
       - name: Build binaries
         run: |
           make
+          cd saroo/tools/savetool/
+          make
+          mv sst ../../../
 
       - name: Get short SHA
         run: echo "sha_name=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
     
       - name: Compress output
         run: |
-          tar -zcvf build.tar.gz ss-converter.exe sgm-unpacker.exe
+          tar -zcvf build.tar.gz ss-converter.exe sgm-unpacker.exe sst.exe
 
       - uses: actions/upload-artifact@v3
         with:
