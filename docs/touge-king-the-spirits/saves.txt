@@ -1,0 +1,7 @@
+TGKRPLY_RP1.SRO=replay save from Rockin-B
+TGKRPLY_RP2.SRO=replay save from Rockin-B
+TGKRPLY_RP3.SRO=replay save from Rockin-B
+TGKRPLY_RP4.SRO=replay save from Rockin-B
+TGKRPLY_RP5.SRO=replay save from Rockin-B
+TGKRPLY_RP6.SRO=replay save from Rockin-B
+TOUGE_KING0.SRO=game save from Rockin-B

@@ -1,1 +1,3 @@
 SEGARALLY_0.SRO=open hidden car (Lancia Stratos) and hidden track (Lakeside)
+SEGARALLY-000.SRO=Records save from Rockin-B
+SEGARALLY-001.SRO=ghost save from Rockin-B

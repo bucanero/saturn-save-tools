@@ -1,0 +1,6 @@
+TOURINGC_01.SRO=Records save from Rockin-B
+TOURINGC_02.SRO=VS save from Rockin-B
+TOURINGC_03.SRO=ghost save from Rockin-B
+TOURINGC_04.SRO=ghost save from Rockin-B
+TOURINGC_05.SRO=ghost save from Rockin-B
+TOURINGC_06.SRO=ghost save from Rockin-B

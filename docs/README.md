@@ -69,6 +69,7 @@ has_toc: false
 | [Sega Ages Memorial Selection Vol. 1 (JPN)](sega-ages-memorial-vol-1/) | JPN |
 | [Sega Ages Memorial Selection Vol. 2 (JPN)](sega-ages-memorial-vol-2/) | JPN |
 | [Sega Rally Championship (JPN)](sega-rally-championship/) | JPN |
+| [Sega Touring Car Championship (JPN)](sega-touring-car-championship/) | JPN |
 | [Shadows of the Tusk (JPN)](shadows-of-the-tusk/) | JPN |
 | [Shining Force 3 (JPN)](shining-force-3/) | JPN |
 | [Shining the Holy Ark (USA)](shining-the-holy-ark/) | USA |
@@ -81,6 +82,7 @@ has_toc: false
 | [Three Dirty Dwarves (USA)](three-dirty-dwarves/) | USA |
 | [Thunder Force Gold Pack 2 (JPN)](thunder-force-gold-pack-2/) | JPN |
 | [Thunder Force V (JPN)](thunder-force-v/) | JPN |
+| [Touge King: The Spirits (JPN)](touge-king-the-spirits/) | JPN |
 | [Tokimeki Memorial: Forever With You (JPN)](tokimeki-memorial/) | JPN |
 | [Vampire Savior (JPN)](vampire-savior/) | JPN |
 | [Virtua Cop (JPN)](virtua-cop/) | JPN |
