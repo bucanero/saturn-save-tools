@@ -6,7 +6,8 @@
 typedef struct
 {
     char magic[8];
-    char pad1[8];
+    char pad1[4];
+    uint32_t crc32;
     char filename[12];
     uint32_t size;
     char comment[11];
