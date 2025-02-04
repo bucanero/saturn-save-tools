@@ -1,0 +1,1 @@
+NINPEN_M_01.SRO=Save file which takes you to the start of Stages 5 and 6 (save slots two and one, respectively).

@@ -1,0 +1,1 @@
+HYPERDUEL_0.SRO=Clean save file with Free Play option unlocked which grants unlimited continues in both Arcade and Saturn modes.

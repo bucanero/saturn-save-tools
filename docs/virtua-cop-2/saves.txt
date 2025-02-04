@@ -1,0 +1,2 @@
+VIRTUACOP_2.SRO=open Options+ menu with Big Head mode and Gun Select
+VIRTUACOP_2-002.SRO=save from PlanetWeb

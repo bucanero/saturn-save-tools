@@ -1,0 +1,2 @@
+TF_GP2___01.SRO=Game cleared on a single credit (no continues used). This allows the player to swap out the Rynex fighter for Thunder Force III's Styx. To use the Styx, highlight Thunder Force IV on the game select screen, then hold X + Y + Start until gameplay in the first stage begins.
+TF_GP2___01-002.SRO=Clean save file with the Styx fighter from Thunder Force III unlocked.

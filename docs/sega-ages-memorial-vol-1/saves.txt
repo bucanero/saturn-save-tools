@@ -1,0 +1,1 @@
+SA_MEMSEL01.SRO=Clean save file with the following options unlocked: Game Mode, Game Level, Life, Credit

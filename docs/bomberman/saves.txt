@@ -1,0 +1,3 @@
+BOMBERSS_03.SRO=save from PlanetWeb
+BOMBERSS_04.SRO=save from PlanetWeb
+BOMBERSS_01.SRO=Game cleared; load the "Normal Game" save file to face the final boss Dr. Mechado. You might want to travel to previous worlds via the ship and collect some power-ups first.

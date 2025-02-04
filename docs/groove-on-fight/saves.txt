@@ -1,0 +1,2 @@
+GROOVE_ON_F.SRO=have access to "Omake" Option and all character arts
+GROOVE_ON_F-002.SRO=Clean save file with all bonus characters (Damian, Bristol, and Bristol-D) playable in Arcade and Versus modes, and all artwork unlocked in the Omake menu.

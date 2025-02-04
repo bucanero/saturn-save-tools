@@ -1,0 +1,1 @@
+V_SAVIOR_01.SRO=open EX Option menu (hold L+R and choose Option Mode). Access to all character endings in EX Options

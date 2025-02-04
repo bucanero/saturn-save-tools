@@ -1,0 +1,2 @@
+ELEVATOR_AC.SRO=open "original" game
+ELEVATOR_AC-002.SRO=Clean save file with original arcade version of Elevator Action playable via "OLD" in the main menu.

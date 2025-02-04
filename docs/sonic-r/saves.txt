@@ -1,0 +1,2 @@
+SONICR___01.SRO=every hidden character,levels & more
+SONICR___01-002.SRO=100% save file for Sonic R

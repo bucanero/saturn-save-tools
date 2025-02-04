@@ -1,0 +1,2 @@
+B_GAREGGA__.SRO=have access to "Super Play"
+B_GAREGGA__-002.SRO=Clean save file with Super Play unlocked, all stages playable in Score Attack mode, and the following settings applied: Easy Menu Mode, Guest Players

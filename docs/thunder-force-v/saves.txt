@@ -1,0 +1,2 @@
+T_FORCEV_00.SRO=Master difficulty level and Free continue option unlocked.
+T_FORCEV_00-002.SRO=Clean save file with Master difficulty and Free continue option unlocked, the latter granting unlimited continues.

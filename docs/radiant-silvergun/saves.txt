@@ -1,0 +1,1 @@
+RADIANT_S_G.SRO=Clean save file with all settings in Option+ menu unlocked. These are: Stage Select, Game Speed, Look HitArea, Player Speed.

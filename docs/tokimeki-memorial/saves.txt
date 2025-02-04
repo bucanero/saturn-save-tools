@@ -1,0 +1,2 @@
+TOKIMEKI_01.SRO=Save files with four playthroughs completed, which should be enough to trigger additional dialogue in Policenauts.
+TOKIMEKI_99.SRO=Save files with four playthroughs completed, which should be enough to trigger additional dialogue in Policenauts. Bonus content can be accessed by selecting the bottom item in the main menu.
