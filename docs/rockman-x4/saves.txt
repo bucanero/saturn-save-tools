@@ -1,1 +1,1 @@
-ROCKMAN_X4_.SRO=have access to all levels and all weapons
+ROCKMAN-X4.SRO=have access to all levels and all weapons

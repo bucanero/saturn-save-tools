@@ -12,4 +12,4 @@ permalink: ./megaman-x4/
 
 | SAROO | .BUP | Description |
 |------|----------|-------------|
-| [MEGAMAN_X4_.SRO](MEGAMAN_X4_.SRO){: .btn .btn-purple } | [MEGAMAN_X4_.BUP](MEGAMAN_X4_.BUP){: .btn .btn-purple } | save from PlanetWeb |
+| [MEGAMAN-X4.SRO](MEGAMAN-X4.SRO){: .btn .btn-purple } | [MEGAMAN-X4.BUP](MEGAMAN-X4.BUP){: .btn .btn-purple } | save from PlanetWeb |

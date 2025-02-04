@@ -1,1 +1,1 @@
-OUTRUN___01.SRO=Clean save file with the the hidden, game-changing 60fps Smooth mode unlocked and enabled by default.
+OUTRUN-01.SRO=Clean save file with the the hidden, game-changing 60fps Smooth mode unlocked and enabled by default.

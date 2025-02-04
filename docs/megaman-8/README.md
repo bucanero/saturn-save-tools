@@ -12,4 +12,4 @@ permalink: ./megaman-8/
 
 | SAROO | .BUP | Description |
 |------|----------|-------------|
-| [MEGAMAN_8__.SRO](MEGAMAN_8__.SRO){: .btn .btn-purple } | [MEGAMAN_8__.BUP](MEGAMAN_8__.BUP){: .btn .btn-purple } | All eight Robot Masters defeated. Cheats used to earn 43 bolts, used to purchase the following power-ups: Shooting Part, Energy Balancer, Laser Shot, Arrow Shot, Energy Saver, Super Recover, High Speed Charge, Exchanger |
+| [MEGAMAN8.SRO](MEGAMAN8.SRO){: .btn .btn-purple } | [MEGAMAN8.BUP](MEGAMAN8.BUP){: .btn .btn-purple } | All eight Robot Masters defeated. Cheats used to earn 43 bolts, used to purchase the following power-ups: Shooting Part, Energy Balancer, Laser Shot, Arrow Shot, Energy Saver, Super Recover, High Speed Charge, Exchanger |

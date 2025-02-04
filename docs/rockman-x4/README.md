@@ -12,4 +12,4 @@ permalink: ./rockman-x4/
 
 | SAROO | .BUP | Description |
 |------|----------|-------------|
-| [ROCKMAN_X4_.SRO](ROCKMAN_X4_.SRO){: .btn .btn-purple } | [ROCKMAN_X4_.BUP](ROCKMAN_X4_.BUP){: .btn .btn-purple } | have access to all levels and all weapons |
+| [ROCKMAN-X4.SRO](ROCKMAN-X4.SRO){: .btn .btn-purple } | [ROCKMAN-X4.BUP](ROCKMAN-X4.BUP){: .btn .btn-purple } | have access to all levels and all weapons |

@@ -1,1 +1,1 @@
-MEGAMAN_X4_.SRO=save from PlanetWeb
+MEGAMAN-X4.SRO=save from PlanetWeb

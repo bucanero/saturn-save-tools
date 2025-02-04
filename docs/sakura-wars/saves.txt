@@ -1,2 +1,2 @@
-SAKURA___01.SRO=Game cleared with Sakura's Ending and some features unlocked in Long Day mode.
-SAKURA___01-002.SRO=complete save with the "Long Day" bonus feature on the Sumire ending!
+SAKURA-01.SRO=Game cleared with Sakura's Ending and some features unlocked in Long Day mode.
+SAKURA-01-002.SRO=complete save with the "Long Day" bonus feature on the Sumire ending!
