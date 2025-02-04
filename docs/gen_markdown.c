@@ -14,7 +14,6 @@ void save_main(char* path, char* title)
     char * pos;
     size_t len = 0;
     ssize_t read;
-    char vmi[200];
 
     chdir(path);
     fp = fopen("saves.txt", "r");
@@ -28,6 +27,7 @@ void save_main(char* path, char* title)
 
     while ((read = getline(&line, &len, fp)) != -1) {
 		line[read-1] = 0;
+		if (line[read-2] == 0x0D) line[read-2]=0;
 		pos = strchr(line, '=');
 		if (!pos) continue;
 		*pos = 0;

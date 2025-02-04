@@ -12,4 +12,4 @@ permalink: ./albert-odyssey/
 
 | SAROO | .BUP | Description |
 |------|----------|-------------|
-| [ALBERT_G_01.SRO](ALBERT_G_01.SRO){: .btn .btn-purple } | [ALBERT_G_01.BUP](ALBERT_G_01.BUP){: .btn .btn-purple } | all characters L99 w all spells at Radoria's Castle. |
+| [ALBERT_G_01.SRO](ALBERT_G_01.SRO){: .btn .btn-purple } | [ALBERT_G_01.BUP](ALBERT_G_01.BUP){: .btn .btn-purple } | all characters L99 w all spells at Radoria's Castle. |

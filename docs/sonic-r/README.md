@@ -12,5 +12,5 @@ permalink: ./sonic-r/
 
 | SAROO | .BUP | Description |
 |------|----------|-------------|
-| [SONICR___01.SRO](SONICR___01.SRO){: .btn .btn-purple } | [SONICR___01.BUP](SONICR___01.BUP){: .btn .btn-purple } | every hidden character,levels & more |
-| [SONICR___01-002.SRO](SONICR___01-002.SRO){: .btn .btn-purple } | [SONICR___01-002.BUP](SONICR___01-002.BUP){: .btn .btn-purple } | 100% save file for Sonic R |
+| [SONICR___01.SRO](SONICR___01.SRO){: .btn .btn-purple } | [SONICR___01.BUP](SONICR___01.BUP){: .btn .btn-purple } | every hidden character,levels & more |
+| [SONICR___01-002.SRO](SONICR___01-002.SRO){: .btn .btn-purple } | [SONICR___01-002.BUP](SONICR___01-002.BUP){: .btn .btn-purple } | 100% save file for Sonic R |

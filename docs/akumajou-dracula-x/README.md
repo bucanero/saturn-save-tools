@@ -12,4 +12,4 @@ permalink: ./akumajou-dracula-x/
 
 | SAROO | .BUP | Description |
 |------|----------|-------------|
-| [DRACULAX_01.SRO](DRACULAX_01.SRO){: .btn .btn-purple } | [DRACULAX_01.BUP](DRACULAX_01.BUP){: .btn .btn-purple } | Game cleared with Alucard at level 61 with maximum map completion (211.2%). Loading the save file takes you to the Black Marble Gallery |
+| [DRACULAX_01.SRO](DRACULAX_01.SRO){: .btn .btn-purple } | [DRACULAX_01.BUP](DRACULAX_01.BUP){: .btn .btn-purple } | Game cleared with Alucard at level 61 with maximum map completion (211.2%). Loading the save file takes you to the Black Marble Gallery |

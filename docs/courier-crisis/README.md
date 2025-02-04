@@ -12,4 +12,4 @@ permalink: ./courier-crisis/
 
 | SAROO | .BUP | Description |
 |------|----------|-------------|
-| [COURIERU000.SRO](COURIERU000.SRO){: .btn .btn-purple } | [COURIERU000.BUP](COURIERU000.BUP){: .btn .btn-purple } | I got pretty far in the game. |
+| [COURIERU000.SRO](COURIERU000.SRO){: .btn .btn-purple } | [COURIERU000.BUP](COURIERU000.BUP){: .btn .btn-purple } | I got pretty far in the game. |
