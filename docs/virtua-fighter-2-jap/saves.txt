@@ -1,0 +1,1 @@
+VFIGHTER2_X.SRO=open Options+ menu

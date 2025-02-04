@@ -1,0 +1,2 @@
+FIGHTERS_MM.SRO=save from PlanetWeb
+FIGHTERS_MM-002.SRO=Complete save file for the US version. This includes the AM2 Tree.

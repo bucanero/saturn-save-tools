@@ -1,0 +1,1 @@
+RABBIT_DATA.SRO=Game cleared; toggle for (ugly) zoom feature unlocked and disabled by default.

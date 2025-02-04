@@ -1,0 +1,1 @@
+S_GUNDAM_02.SRO=Game cleared, all five stages available in the Stage Select menu.

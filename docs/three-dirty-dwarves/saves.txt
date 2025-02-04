@@ -1,0 +1,1 @@
+THREE_DIRTY.SRO=have access to all levels on normal game mode

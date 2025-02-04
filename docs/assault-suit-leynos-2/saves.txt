@@ -1,0 +1,1 @@
+LEYNOS2_DAT.SRO=Complete save file! Game cleared with A rank. All playable Assault Suits, weapons, devices, and armor unlocked! File begins on Mission 1 of the "second loop", with the game's adaptive difficulty locked at the highest setting (this is always the case on the "second loop" and cannot be changed).

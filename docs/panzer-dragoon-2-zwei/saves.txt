@@ -1,0 +1,4 @@
+PANDRA_ZWEI_01.SRO=Fresh new save file with all of the secret Pandra's Box gameplay options unlocked from the start. Starting a new game with either of these save files in the Saturn's internal memory allows for the acquisition of the Aronak Unit in Disc 3, which can be interacted with at the Camp.
+PANDRA_ZWEI_02.SRO=Save file with 199 hours of playtime on it. Starting a new game of Panzer Dragoon Saga with this save file in the Saturn's internal memory will have Edge start with a whopping 19,850 Dyne!
+PANDRA_ZWEI.SRO=Clean save file with Pandra's Box unlocked, including the hidden "8th" and "Special" episodes.
+PANDRA_ZWEI_03.SRO=Somewhat beefy 12+ hour save file

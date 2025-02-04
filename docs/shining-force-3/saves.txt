@@ -1,0 +1,6 @@
+SFORCE31_01.SRO=Scenario 1 before final fight
+SFORCE31_02.SRO=Scenario 1 after final fight
+SFORCE32_01.SRO=Scenario 2 before final fight
+SFORCE32_02.SRO=Scenario 2 after final fight
+SFORCE33_01.SRO=Scenario 3 before final fight
+SFORCE33_02.SRO=Scenario 3 after final fight

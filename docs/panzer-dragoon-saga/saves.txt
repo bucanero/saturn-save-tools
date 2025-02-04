@@ -1,0 +1,6 @@
+PANDRA_3_01.SRO=(Disc 4) - Game Cleared, saved at Camp next to Seekers' Stronghold. (Hint, use the "express elevator" marked with three vertical lines in the Tower to reach the bottom floor quickly and face Sestren.)
+PANDRA_3_02.SRO=(Disc 3) - The Tower, first visit, right before the battle with the Exterminator. Fly to the top of the Tower to initiate the battle.
+PANDRA_3_03.SRO=(Disc 3) - Camp, near Village of Zoah, prior to clearing the Imperial Air Force Post. Destroy one anchored warship to initiate battle with the Behemoth.
+PANDRA_3_11.SRO=(Disc 2) - Underground Ruins of Uru, prior to fighting the Energ and Absorboras. Exit through the door behind you to initiate the battle.
+PANDRA_3_12.SRO=(Disc 1) - Forbidden Zone, prior to fighting the Gunship and Guardian Dragon. Enter Shelcoof (the giant airship) through its left side to initiate the battle.
+PANDRA_3_13.SRO=(Disc 1) - Blue Ruins at the Garil Desert, prior to fighting the Gigralyph and Gigra. Enter the nearby ruins to initiate the battle.

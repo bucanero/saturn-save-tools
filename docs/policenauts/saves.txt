@@ -1,0 +1,13 @@
+POLICENA_01.SRO=Start of Act 1 (Disc 2)
+POLICENA_02.SRO=Start of Act 2 (Disc 2)
+POLICENA_03.SRO=Start of Act 3 (Disc 3)
+POLICENA_04.SRO=Start of Act 4 (Disc 3)
+POLICENA_05.SRO=Start of Act 5 (Disc 3)
+POLICENA_06.SRO=Start of Act 6 (Disc 3)
+POLICENA_07.SRO=Start of Act 7 (Disc 3)
+POLICENA_08.SRO=Epilogue and Credits (Disc 1)
+POLICENA_09.SRO=Select the CD rack to listen to various songs (Disc 2)
+POLICENA_10.SRO=Option to touch Meryl unlocked (Disc 2)
+POLICE_END1.SRO=Game cleared; bonus videos unlocked on disc 1 and all of the shooting scenes are playable from their respective discs. Standard theme will play during the credits
+POLICE_END2.SRO=Game cleared; bonus videos unlocked on disc 1 and all of the shooting scenes are playable from their respective discs. Alternate theme will play during the credits
+POLICE_END3.SRO=Game cleared; bonus videos unlocked on disc 1 and all of the shooting scenes are playable from their respective discs. Extra dialogue will play during the credits; wait for about 100 seconds for it to kick in.

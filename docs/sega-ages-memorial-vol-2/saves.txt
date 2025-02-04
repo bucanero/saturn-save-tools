@@ -1,0 +1,1 @@
+SA_MEMSEL02.SRO=Clean save file with the following settings added to the Game Mode option: Arcade-A, Arcade-B

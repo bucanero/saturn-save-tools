@@ -1,0 +1,2 @@
+METALSLUG__.SRO=have access to all missions
+METALSLUG__-002.SRO=Combat School cleared with the maximum score of 1000 points to attain "Super Devil" rank, allowing Survival mode to be played with new colours (green skin for Marco, purple skin for Tarma) and an ultra-powerful pistol that shoots explosive shells! This save file must be used in conjunction with a patched version of the game

@@ -1,0 +1,1 @@
+SG_MASH_001.SRO=Save file which takes you to the end of Stage 6. Leave the room and walk downwards into the arrow to encounter the final boss.

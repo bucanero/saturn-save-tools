@@ -1,0 +1,3 @@
+BUL_SLA__01.SRO=100% complete save! All Navigators obtained and maxed out at Level 3. All 22 Bonus Visual images obtained.
+BUL_SLA__02.SRO=Clean save file with all Navigators unlocked and maxed out at Level 3, and all Visual Bonus artwork viewable.
+BUL_SLA__09.SRO=100% complete Bulk Slash save (including the seventh miss and also a bunch of high scores that I'll probably never beat)

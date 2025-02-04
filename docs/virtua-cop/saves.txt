@@ -1,0 +1,1 @@
+VIRTUACOP_1.SRO=open Options+ menu with Gun Select

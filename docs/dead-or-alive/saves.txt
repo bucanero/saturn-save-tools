@@ -1,0 +1,2 @@
+DOA_SS_FILE.SRO=have access to all "Extra Costumes", enable Raidou and open "Extra Config"
+DOA_SS_FILE-002.SRO=Clean save file with all costumes unlocked and all bonus options available in the Extra Config menu. Final boss Raidou is not unlocked.

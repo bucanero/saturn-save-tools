@@ -1,0 +1,1 @@
+AB2SCORE_01.SRO=Clean save file with secret options unlocked, accessible by pressing either shoulder button in the Options menu. These are: Trace, Trace Load/Save, BGM Mode, Sight

@@ -1,0 +1,1 @@
+SWAGMAN_DAT.SRO=Save file which takes you as close as possible to the titular final boss.

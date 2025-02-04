@@ -1,0 +1,1 @@
+GUARDIAN_HE.SRO=Clean save file with all 45 characters playable in Versus mode, and the following options unlocked: Enemy Level Disp, Next Exp Disp

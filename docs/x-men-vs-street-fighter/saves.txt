@@ -1,0 +1,2 @@
+XMEN_VS_SF_.SRO=open "Extra Turbo Settings", "Sharper Sound Effects", and "Combo Gauge". Can pick the same character for your team
+XMEN_VS_SF_-002.SRO=save from PlanetWeb

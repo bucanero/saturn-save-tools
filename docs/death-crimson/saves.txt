@@ -1,0 +1,1 @@
+DEATH_CRIMS.SRO=Clean save file with Stage 3 and the final boss unlocked; the latter is encountered by selecting the box above the Death Crimson logo in the main menu.

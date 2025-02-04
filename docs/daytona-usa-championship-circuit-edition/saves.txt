@@ -1,0 +1,2 @@
+DAYTONA96_0.SRO=have access to all cars including "Uma", "Uma2", and "Super Daytona"
+DAYTONA97_0.SRO=Here are more high scores for you all to beat.
