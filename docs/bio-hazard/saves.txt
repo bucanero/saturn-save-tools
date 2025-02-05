@@ -1,3 +1,5 @@
 BIO_DATA_01.SRO=Jill - start the game with the Tyrant defeated
 BIO_DATA_02.SRO=Jill - start the game with rocket launcher with infinite ammo
 BIO_DATA_SS.SRO=have access to "Battle Game"
+BIODATA-01.SRO=Jill (1) has a rocket launcher and closet key
+BIODATA-02.SRO=Chris (2) has a rocket launcher and closet key
