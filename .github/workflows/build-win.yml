@@ -30,7 +30,7 @@ jobs:
       - name: Checkout Saroo savetool
         uses: actions/checkout@v4
         with:
-          repository: bucanero/SAROO
+          repository: tpunix/SAROO
           path: saroo
 
       - name: Set up shell
