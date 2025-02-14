@@ -13,6 +13,7 @@
 #define XML_HEADER  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 
 typedef struct {
+    char* filename;
     jo_backup_file header;
     uint32_t size;
     uint8_t *data;
@@ -24,6 +25,21 @@ typedef struct {
     SaturnSave* (*saveLoader)(const uint8_t *, size_t);
 } save_format_t;
 
+
+/* This is the basic CRC-32 calculation with some optimization but no table lookup. */
+u32 crc32b(const u8 *data, int size)
+{
+    int j;
+    u32 crc = 0xFFFFFFFF;
+
+    while (size--){
+        crc ^= *data++;          // XOR with next byte.
+        for (j=0; j<8; j++){     // Do eight times.
+            crc = (crc >> 1) ^ (0xEDB88320 & -(crc & 1));
+        }
+    }
+    return ~crc;
+}
 
 void print_details(const SaturnSave* save)
 {
@@ -260,6 +276,11 @@ SaturnSave *load_SAROO_save(const u8 *src_data, size_t len)
     SaturnSave *save;
     SAROOHeader *header = (SAROOHeader*)src_data;
 
+    if (header->crc32 && ES32(header->crc32) != crc32b(src_data + 0x10, len - 0x10))
+    {
+        printf("[!] Warning: CRC32 mismatch!\n");
+    }
+
     save = (SaturnSave*)malloc(sizeof(SaturnSave));
     memset(save, 0, sizeof(SaturnSave));
     memcpy(save->header.filename, header->filename, 11);
@@ -277,31 +298,31 @@ SaturnSave *load_SAROO_save(const u8 *src_data, size_t len)
 
 int export_SAROO(const SaturnSave* save)
 {
-    FILE *fp;
     char fname[32];
-    jo_backup_date date;
-    SAROOHeader header = {0};
+    uint8_t *buf = malloc(sizeof(SAROOHeader) + save->size);
+    SAROOHeader *header = (SAROOHeader*) buf;
 
-    memcpy(header.magic, SAROO_MAGIC, 8);
-    memcpy(header.filename, save->header.filename, 11);
-    memcpy(header.comment, save->header.comment, 10);
-    header.size = save->header.datasize;
-    header.date = save->header.date;
-    header.language = save->header.language;
+    memset(header, 0, sizeof(SAROOHeader));
+    memcpy(header->magic, SAROO_MAGIC, 8);
+    memcpy(header->filename, save->header.filename, 11);
+    memcpy(header->comment, save->header.comment, 10);
+    header->size = save->header.datasize;
+    header->date = save->header.date;
+    header->language = save->header.language;
 
-    snprintf(fname, sizeof(fname), "%s%s", save->header.filename, ".bin");
-    fp = fopen(fname, "wb");
-    if (!fp)
+    memcpy(buf + sizeof(SAROOHeader), save->data, save->size);
+    header->crc32 = crc32b(buf + 0x10, save->size + 0x30);
+    header->crc32 = ES32(header->crc32);
+
+    snprintf(fname, sizeof(fname), "%s%s", save->filename, ".SRO");
+    if (write_buffer(fname, buf, save->size + sizeof(SAROOHeader)) < 0)
     {
         printf("[X] ERROR: Couldn't create file! (%s)\n", fname);
         return 0;
     }
 
     printf("[*] Exporting %s...\n    > Format  :\t SAROO save (SSAVERAW)\n", fname);
-    fwrite(&header, sizeof(SAROOHeader), 1, fp);
-    fwrite(save->data, save->size, 1, fp);
-    fclose(fp);
-
+    printf("    > CRC32   :\t %08X\n", ES32(header->crc32));
     print_details(save);
     return (1);
 }
@@ -321,6 +342,8 @@ SaturnSave *load_BUP_save(const u8 *src_data, size_t len)
     save = (SaturnSave*)malloc(sizeof(SaturnSave));
     memset(save, 0, sizeof(SaturnSave));
     memcpy(&save->header, &header->dir, sizeof(jo_backup_file));
+    save->header.filename[11] = 0;
+    save->header.comment[10] = 0;
     save->size = ES32(header->dir.datasize);
 
     save->data = (u8*)malloc(save->size);
@@ -333,7 +356,6 @@ int export_BUP(const SaturnSave* save)
 {
     FILE *fp;
     char fname[32];
-    jo_backup_date date;
     vmem_bup_header_t header = {0};
 
     memcpy(header.magic, VMEM_MAGIC_STRING, VMEM_MAGIC_STRING_LEN);
@@ -341,7 +363,7 @@ int export_BUP(const SaturnSave* save)
     header.dir.blocksize = calculateUsedBlocks(save->size, SAT_CLUSTER_SIZE);
     header.date = save->header.date;
 
-    snprintf(fname, sizeof(fname), "%s%s", save->header.filename, BUP_EXTENSION);
+    snprintf(fname, sizeof(fname), "%s%s", save->filename, BUP_EXTENSION);
     fp = fopen(fname, "wb");
     if (!fp)
     {
@@ -371,7 +393,7 @@ int main(int argc, char **argv)
     uint8_t *data;
     SaturnSave *save = NULL;
     save_format_t formats[] = {
-        {"SAROO (SSAVERAW)", check_SAROO_save, load_SAROO_save},
+        {"SRO (SAROO single save)", check_SAROO_save, load_SAROO_save},
         {"BUP (Pseudo Saturn Kai)", check_BUP_save, load_BUP_save},
         {"XML (Backup RAM Parser)", check_XML_save, load_XML_save},
         {"B64 (Save Game Manager)", check_B64_save, load_B64_save},
@@ -414,6 +436,8 @@ int main(int argc, char **argv)
         printf("[X] ERROR: Can't detect save format!\n\n");
         return -1;
     }
+    save->filename = strdup(argv[1]);
+    strrchr(save->filename, '.')[0] = 0;
 
     if (!argc || (argc > 1 && strcmp(argv[2], "-s") == 0))
         len = export_SAROO(save);

@@ -17,7 +17,7 @@ This command-line tool converts single Saturn save files to `BUP` format (Pseudo
 ### Supported formats
 
 - `.BUP`: Pseudo Saturn Kai
-- `.bin`: SAROO (SSAVERAW)
+- `.SRO`: SAROO (SSAVERAW)
 - `.XML`: SS Backup RAM Parser
 - `.B64`: Save Game Manager
 - `.CMS`: PC Comms Link
@@ -25,7 +25,7 @@ This command-line tool converts single Saturn save files to `BUP` format (Pseudo
 ### Output formats
 
 - `.BUP`: Pseudo Saturn Kai (Default)
-- `.bin`: SAROO single save
+- `.SRO`: SAROO single save
 
 ### Usage
 
