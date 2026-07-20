@@ -228,7 +228,7 @@
 </div>
 
 <input type="file" id="fileOpen" accept=".bin,application/octet-stream" style="display:none">
-<input type="file" id="fileImport" accept=".sro,.bup,.bin,application/octet-stream" style="display:none">
+<input type="file" id="fileImport" accept=".sro,.bup,.bin,.xml,application/octet-stream,application/xml" style="display:none">
 <div id="toast"></div>
 
 <script>
@@ -726,6 +726,61 @@ function fmtSize(n){ return n>=1024 ? (n/1024).toFixed(n%1024?1:0)+' KB' : n+' B
 function safeName(s){ return (s||'SAVE').replace(/[^A-Za-z0-9._-]/g,'_'); }
 function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
+// ---- hitomi2500 "SS Backup RAM Parser" .XML format ----
+// Date/time fields are used verbatim (no offset), matching the raw "minutes since 1980" value.
+function b64encode(b){ let s=''; for(let i=0;i<b.length;i++) s+=String.fromCharCode(b[i]); return btoa(s); }
+function b64decode(str){ const bin=atob((str||'').replace(/\s+/g,'')); const b=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) b[i]=bin.charCodeAt(i); return b; }
+function padBytes(b,n){ const o=new Uint8Array(n); o.set(b.subarray(0,n)); return o; }
+// field bytes up to the first NUL, decoded as UTF-8 with replacement — matches hitomi's text elements
+function xmlFieldText(bytes){ let n=bytes.length; for(let i=0;i<bytes.length;i++){ if(bytes[i]===0){ n=i; break; } } return new TextDecoder('utf-8').decode(bytes.subarray(0,n)); }
+function xmlEsc(s){ return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function looksLikeXml(bytes){ let i=0; while(i<bytes.length && bytes[i]!==0x3c && bytes[i]<0x80 && bytes[i]<=0x20) i++; return bytes[i]===0x3c; }
+
+function buildXmlSave(s){
+  const rf=padBytes(s.rawFilename||new Uint8Array(0),11), rc=padBytes(s.rawComment||new Uint8Array(0),10);
+  const d=decodeDate(s.date>>>0) || {year:1980,month:1,day:1,hour:0,min:0};
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<Sega_Saturn_Save>',
+    '    <mandatory>',
+    '        <counter>0</counter>',
+    `        <name>${xmlEsc(xmlFieldText(rf))}</name>`,
+    `        <name_binary>${b64encode(rf)}</name_binary>`,
+    `        <comment>${xmlEsc(xmlFieldText(rc))}</comment>`,
+    `        <comment_binary>${b64encode(rc)}</comment_binary>`,
+    `        <language_code>${s.language&0xff}</language_code>`,
+    `        <size>${s.dataSize}</size>`,
+    `        <date year="${d.year}" month="${d.month}" day="${d.day}"/>`,
+    `        <time hour="${d.hour}" minute="${d.min}" second="0"/>`,
+    `        <data>${b64encode(s.data)}</data>`,
+    '    </mandatory>',
+    '    <optional/>',
+    '</Sega_Saturn_Save>',
+    ''
+  ].join('\n');
+}
+function parseXmlSave(text){
+  const doc=new DOMParser().parseFromString(text,'text/xml');
+  if(doc.querySelector('parsererror')) throw new Error('Invalid XML.');
+  if(!doc.querySelector('Sega_Saturn_Save')) throw new Error('Not a Sega_Saturn_Save XML file.');
+  const q=t=>{ const e=doc.querySelector(t); return e?e.textContent.trim():null; };
+  const dataB64=q('data'); if(dataB64===null) throw new Error('Missing <data> element.');
+  const data=b64decode(dataB64);
+  const size=parseInt(q('size')||data.length,10);
+  if(data.length!==size) throw new Error(`Data size mismatch (declared ${size}, decoded ${data.length}).`);
+  const nb=q('name_binary'), cb=q('comment_binary');
+  const rawFilename=padBytes(nb!==null?b64decode(nb):new TextEncoder().encode(q('name')||''),11);
+  const rawComment =padBytes(cb!==null?b64decode(cb):new TextEncoder().encode(q('comment')||''),10);
+  const language=parseInt(q('language_code')||'0',10)&0xff;
+  const de=doc.querySelector('date'), te=doc.querySelector('time');
+  let date=0;
+  if(de){ const y=+de.getAttribute('year'), mo=+de.getAttribute('month'), dd=+de.getAttribute('day');
+    const h=te?+te.getAttribute('hour'):0, mi=te?+te.getAttribute('minute'):0;
+    if(y) date=encodeDate({year:y,month:mo,day:dd,hour:h,min:mi}); }
+  return { fmt:'XML', filename:cstr(rawFilename,0,11), comment:cstr(rawComment,0,10),
+           rawFilename, rawComment, language, date, dataSize:size, data };
+}
+
 // Position an open dropdown as viewport-fixed so it isn't clipped by the table's
 // overflow container (e.g. on the last row). Flips upward when there's no room below.
 function positionMenu(trg, items){
@@ -809,6 +864,7 @@ function render(){
       items.appendChild(mk('.SRO (SAROO raw)','',()=>{ exportSave(v.id,s.id,'SRO'); menu.classList.remove('open'); }));
       items.appendChild(mk('.BUP (Pseudo Saturn)','',()=>{ exportSave(v.id,s.id,'BUP'); menu.classList.remove('open'); }));
       items.appendChild(mk('.BIN (raw data)','',()=>{ exportSave(v.id,s.id,'BIN'); menu.classList.remove('open'); }));
+      items.appendChild(mk('.XML (Backup RAM Parser)','',()=>{ exportSave(v.id,s.id,'XML'); menu.classList.remove('open'); }));
       menu.appendChild(trg); menu.appendChild(items);
       grp.appendChild(menu);
       if(!box.readOnly){
@@ -832,6 +888,7 @@ function exportSave(volId,saveId,fmt){
     const base=safeName(sjisText(m.filename));
     if(fmt==='SRO') download(buildSRO(s), base+'.SRO');
     else if(fmt==='BUP') download(buildBUP(s), base+'.BUP');
+    else if(fmt==='XML') download(buildXmlSave(s), base+'.xml', 'application/xml');
     else download(r.data, base+'.BIN');
     toast(`Exported ${sjisText(m.filename)}.${fmt}`,'ok');
   }catch(e){ toast('Export failed: '+e.message,'err'); }
@@ -850,8 +907,9 @@ $('fileImport').onchange = async e=>{
   const f=e.target.files[0]; e.target.value=''; if(!f||!pending) return;
   try{
     const buf=new Uint8Array(await f.arrayBuffer());
-    const save=parseRawSave(buf);
-    if(!save){ toast('Not a .SRO / .BUP save file (SSAVERAW or Vmem header expected).','err'); return; }
+    const isXml = /\.xml$/i.test(f.name) || looksLikeXml(buf);
+    const save = isXml ? parseXmlSave(new TextDecoder('utf-8').decode(buf)) : parseRawSave(buf);
+    if(!save){ toast('Unsupported file — expected .SRO / .BUP (SSAVERAW or Vmem) or a .XML save.','err'); return; }
     if(save.crcOk===false && !confirm(`CRC mismatch in ${f.name} — the file may be corrupt. Import anyway?`)) return;
     if(pending.mode==='import'){
       box.importNew(pending.volId, save);
